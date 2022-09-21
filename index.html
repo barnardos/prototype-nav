@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"ec7fc06072",applicationID:"98925803"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+        <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    
+    <link rel="stylesheet" media="all" href="style.css" />
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEPy13jGtUu0orSWQ_dBqvjwqqtGfx0mA&amp;libraries=places" defer></script>
+<script src="/sites/default/files/js/js_Dv-YfaFVYpPHuZ-6Gghkl1zkjFFAVxSawisRh21adVo.js" defer></script>
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js" defer></script>
+<![endif]-->
+
+    <link rel="canonical" href="https://www.barnardos.org.uk/" />
+<meta name="description" content="Barnardo&#039;s is a children&#039;s charity that protects and supports the UK’s most vulnerable children and young people. We help bring out the best in them – no matter who they are or what they have been through. " />
+<meta property="og:site_name" content="Barnardo&#039;s" />
+<meta property="og:type" content="Page" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@barnardos" />
+<script data-domain="barnardos.org.uk" data-api="/js-points/api/event" src="/js-points" defer></script>
+<link rel="alternate" href="https://www.barnardos.org.uk/" hreflang="en-gb" />
+<link rel="icon" href="https://www.barnardos.org.uk/favicon.ico" />
+<link rel="icon" href="https://www.barnardos.org.uk/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://www.barnardos.org.uk/apple-touch-icon.png" />
+<meta name="theme-color" content="#558200" />
+<link rel="preconnect" href="https://maps.googleapis.com" />
+<link rel="manifest" href="https://www.barnardos.org.uk/manifest.json" />
+<meta property="og:url" content="https://www.barnardos.org.uk/" name="twitter:url" />
+<meta property="og:title" content="Believe in children | Children&#039;s charity" name="twitter:title" />
+<meta property="og:description" content="Barnardo&#039;s is a children&#039;s charity that protects and supports the UK’s most vulnerable children and young people. We help bring out the best in them – no matter who they are or what they have been through. " name="twitter:description" />
+<meta property="og:image:width" content="400" name="twitter:image:width" />
+<meta property="og:image:height" content="300" name="twitter:image:height" />
+<link rel="preload" href="" imagesrcset="https://www.barnardos.org.uk/sites/default/files/styles/b_xs/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=8XjpIvj0 500w, https://www.barnardos.org.uk/sites/default/files/styles/b_sm/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=wwd6l8lZ 768w, https://www.barnardos.org.uk/sites/default/files/styles/b_md/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=A72sGDJn 1024w, https://www.barnardos.org.uk/sites/default/files/styles/b_lg/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=ZyAufLqW 1440w" imagesizes="100vw" as="image" type="image" />
+
+
+    <title>Believe in children | Children&#039;s charity  | Barnardo&#039;s</title>
+    <script>GLOBAL_GTM = 'GTM-KK3GXMT' || undefined;</script>
+  </head>
+  <body class="node-tabs">
+    <p style="background:cornflowerblue;color:white;text-align:center">Prototype page for demo only</p>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+
+  <header>
+      <div>
+    <div id="block-hero-block">
+  
+    
+                  
+<div class="header">
+  <a href="#main-content" class="skip-link focusable">
+      Skip to main content
+    </a>
+    <a href="#footer" class="skip-link focusable">
+      Skip to footer
+    </a>
+  
+  <div class="header__row">
+
+    <div class="header__logo">
+    <a class="logo" href="/">
+    <span class="visually-hidden">Believe in children Barnardo's</span>
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="284" height="134" viewBox="0 0 284 134" class="logo">
+            <g fill="none" fill-rule="nonzero">
+                <path fill="#020203" d="M267.276 123.463c-.066-.724-.044-4.467-.157-8.342.157-.004.575.022.575.022s3.155 9.795 9.345 8.006c1.047-.305 1.946-1.064 2.282-2.12 2.02-6.418-10.366-5.266-11.91-11.196-1.82-6.967 7.229-10.41 13.135-6.78.336.66 1.14 6.052 1.16 6.06.018.01-.776.105-.859 0-.113 0-1.356-4.013-4.44-5.501-.642-.31-4.586-1.16-5.445 2.133-1.64 6.266 15.278 4.04 11.779 14.272-.737 2.164-2.081 3.368-3.913 4.214-2.33 1.082-5.733.755-8.206.314-1.07-.183-2.317-.728-3.346-1.082"/>
+                <g fill="#020203">
+                    <path d="M247.737 102.012c14.78-1.413 18.654 19.904 2.997 22.43-16.525 2.67-20.56-20.746-2.997-22.43m1.004 1.458c-10.4 0-8.983 21.365.715 19.672 8.943-1.562 8.053-19.672-.715-19.672M127.637 101.87c-.079.55.008 3.395 0 4.311 7.394-9.577 11.94.882 7.569 2.081-2.884.794-2.448-2.138-4.895-1.893-.86.083-1.719.794-2.334 2.604a5.581 5.581 0 0 0-.332 1.894c-.008 3.935-.14 8.586.197 9.943.536 2.12 2.918 3.067 4.236 2.954v.646c-3.28-.044-9.218-.022-13.162 0v-.598c.977.03 3.765-1.383 3.752-3.551-.035-6.056.161-10.192-.27-11.78-.315-1.174-1.27-2.086-2.405-2.549-.27-.109-1.705-.48-.58-.828 3.246-1 5.558-1.885 8.224-3.233M83.88 105.688c3.808 1.039 7.014 3.687 7.599 7.173 1.897 11.287-11.77 12.129-21.159 11.374-2.957-.235-5.776.18-7.604.157v-1.147c2.02-.17 3.805-.663 3.805-3.094V93.022c0-2.046-1.82-2.796-3.717-2.796-.079-.367-.053-.764-.022-1.135 11.199.493 24.16-2.111 26.275 6.977 1.55 6.67-4.436 8.717-5.178 9.62m-11.273 16.58c2.57 1.051 4.568 1.134 7.046.65 8.036-1.597 9.205-13.587.545-15.537-2.015-.454-7.59-.502-7.59-.188 0-.004-.014 13.447 0 15.074m.034-31.483c-.07-.004-.035 14.712-.035 14.712 0 .528 5.563.122 6.876-.432 7.08-2.997 6.081-13.272-1.942-14.11-2.225-.235-4.899-.349-4.899-.17M116.066 122.898c.13.327.244.75.244.75s-.903.45-1.5.62c-5.17 1.496-5.349-3.18-5.349-3.18-.048-.027-.205-.677-.816.034-3.093 3.6-13.45 6.052-12.756-1.296.249-2.635 1.985-4.31 4.646-5.811 3.063-1.732 7.774-2.766 8.154-3.709.318-.79.174-3.9.174-4.764 0-1.828-2.216-1.527-2.97-1.366-2.452.524-3.9 2.623-3.888 3.29.07 3.678-3.07 5.183-4.768 4.045-2.56-1.72-.096-5.725 4.053-7.548 2.312-1.017 4.21-1.741 7.224-1.907 4.263-.236 5.471 1.658 5.471 5.454 0 0-.061 14.406-.009 14.428-.004.004-.091 1.383 2.09.96m-7.272-10.567c-.729.31-6.618 2.71-7.77 4.939-.489.942-.702 1.754-.105 2.97 1.44 2.968 7.853.507 7.883-1.483.026-2.046 0-6.409-.008-6.426M187.735 122.898c.131.332.24.75.24.75s-.903.45-1.5.62c-5.17 1.493-5.349-3.185-5.349-3.185-.044-.026-.2-.676-.816.035-3.097 3.6-13.45 6.052-12.756-1.296.245-2.635 1.99-4.306 4.646-5.811 3.058-1.728 7.77-2.766 8.154-3.704.318-.794.179-3.896.179-4.765 0-1.832-2.22-1.527-2.98-1.37-2.447.528-3.896 2.627-3.887 3.295.07 3.673-3.067 5.183-4.764 4.044-2.56-1.715-.096-5.724 4.057-7.544 2.308-1.016 4.215-1.745 7.22-1.906 4.263-.236 5.471 1.653 5.471 5.45 0 0-.065 14.401-.009 14.432.005.004-.091 1.374 2.094.955m-7.272-10.562c-.729.31-6.618 2.709-7.774 4.934-.489.947-.698 1.754-.105 2.976 1.44 2.967 7.848.506 7.879-1.484.035-2.05.009-6.409 0-6.426"/>
+                    <path d="M231.383 87.415c.065 2.347 0 29.685 0 29.685.244 2.753-.227 3.696 2.958 5.454l.039.397a50.932 50.932 0 0 0-7.565 1.763c-.017-1.514 0-3.216 0-3.216 0-2.421-1.605 2.941-7.84 3.225-13.314.606-13.872-25.301 5.938-22.457 1.593.232 1.946 1.287 1.767-.576v-6.985s.175-1.645-3.721-3.442c-.179-.628.602-.724.947-.799 2.364-.493 5.296-2.002 7.477-3.05m-9.973 16.087c-10.758 1.488-8.219 20.109.68 18.656 1.772-.292 4.695-3.268 4.647-5.035-.048-1.858.052-8.913-.092-10.536-.179-2.077-3.084-3.382-5.235-3.085M147.451 101.947l.079-.021v3.813c.244-.118 2.002-1.57 4.75-2.614 1.1-.414 8.499-2.364 8.669 4.263.057 2.277 0 10.48 0 11.732 0 4.302 3.952 4.725 3.952 4.725s0 .301-.008.624h-11.914c.039-.218-.022-.624-.022-.624s3.032-.21 3.032-4.398v-11.1c-.005-4.065-4.42-4.51-8.429.45V119.124c0 1.349.21 4.215 3.407 4.726v.637c-2.207.039-10.3 0-11.97 0-.022-.288 0-.637 0-.637s3.402-.568 3.402-4.713c0-4.088.01-10.375.01-10.375-.393-2.465-3.281-3.12-3.264-3.128.022-.013-.013-.489-.017-.68 2.77-.886 5.44-1.75 8.323-3.007"/>
+                    <path d="M199.166 101.95c-.078.545.004 3.394-.004 4.306 7.399-9.577 11.94.881 7.577 2.085-2.892.794-2.447-2.138-4.899-1.898-.86.088-1.719.794-2.338 2.6-.11.332-.327.974-.327 1.894-.005 3.931-.144 8.591.196 9.944.532 2.124 2.914 3.067 4.236 2.953v.646c-3.28-.044-9.222-.022-13.162 0v-.598c.978.026 3.765-1.387 3.752-3.551-.04-6.06.166-10.197-.27-11.785-.319-1.173-1.274-2.09-2.408-2.548-.275-.113-1.702-.475-.58-.824 3.245-.995 5.562-1.876 8.227-3.224"/>
+                </g>
+                <path fill="#020203" d="M260.402 101.622c.315-.283 1.82-1.575 1.72-2.95-.04-.531-.223-1.382-.786-1.919-.641-.615-1.252-1.208-1.252-2.491-.035-1.348.925-2.347 2.242-2.487 2.238 0 3.202 1.492 3.202 3.342 0 3.128-1.923 5.62-4.41 7.326l-.716-.82z"/>
+                <path fill="#8FC045" d="M27.591 93.205c1.165 0 2.112-1.335 2.112-2.988 0-1.654-.947-2.989-2.112-2.989-1.17 0-2.111 1.34-2.111 2.989 0 1.653.942 2.988 2.111 2.988zm21.7 3.063c-3.7-2.33-6.06-1.41-9.681-3.944-2.775-1.95-3.682-3.778-4.494-5.781-.55-1.37-.794-1.798-1.2-1.798-.257 0-.58.048-.58 1.392 0 .005.005.018.005.03-.004.044-.013.08-.013.132 0 1.67-1.108 7.281-5.746 7.281-4.262-.008-5.688-5.375-5.688-7.382v-.06c0-1.345-.319-1.393-.576-1.393-.41 0-.65.424-1.2 1.798-.807 1.998-1.719 3.83-4.493 5.78-3.617 2.54-5.981 1.615-9.676 3.945-3.682 2.317-5.69 6.606-4.738 7.164.676.397 1.483-.763 2.281-1.793 1.584-2.046 4.616-3.696 5.899-2.535 1.527 1.387-.083 3.6-1.375 6.745-1.116 2.705-.994 5.89-.754 8.543.44 4.8-1.72 6.34-.454 7.173 1.296.837 3.45-3.015 3.926-7.714.24-2.404.157-4.79 1.073-4.79 1.065 0 1.065 4.637.733 6.932-.64 4.446-2.962 6.662-2.552 11.2.293 3.198 2.273 3.324 2.312.091.066-5.279 5.035-7.984 4.664-17.233-.218-5.528-1.012-9.695 1.872-15.65a68.962 68.962 0 0 0 1.998-4.581c.23.615.724 1.828 1.047 2.373 3.333 5.51 3.35 5.528 2.067 10.515-1.732 6.723 1.593 9.49.99 13.905-.344 2.57 1.205 2.644 1.86.03.784-3.154-.511-5.048-.45-8.246.035-1.662.567-4.843 1.6-4.633.642.13.127 1.597 0 3.39-.195 2.718.673 6.36 1.855 6.008 1.152-.345-.166-1.654.606-5.022.458-1.977 1.313-4.437.786-6.728-1.047-4.568 1.474-7.91 2.067-9.014.432-.803.86-1.767 1.108-2.648a68.837 68.837 0 0 0 2.033 4.65c2.875 5.96 2.09 10.123 1.868 15.65-.371 9.246 4.598 11.95 4.667 17.234.04 3.233 2.025 3.107 2.313-.091.41-4.538-1.911-6.754-2.548-11.2-.332-2.295-.332-6.933.733-6.933.92 0 .833 2.387 1.077 4.79.476 4.695 2.631 8.548 3.927 7.715 1.27-.83-.895-2.37-.45-7.173.24-2.653.358-5.833-.754-8.543-1.292-3.146-2.901-5.353-1.379-6.745 1.278-1.165 4.319.489 5.903 2.535.798 1.03 1.6 2.19 2.281 1.793.938-.558-1.069-4.847-4.75-7.164zm-7.67-3.36c1.16.742 2.94-.034 3.974-1.723 1.034-1.693.93-3.665-.235-4.402-1.16-.737-2.945.035-3.97 1.723-1.038 1.698-.934 3.665.231 4.403zm-28.007 0c1.16-.737 1.269-2.709.235-4.402-1.034-1.693-2.814-2.46-3.974-1.723-1.16.742-1.27 2.71-.236 4.402 1.03 1.693 2.81 2.465 3.975 1.724zm41.374 40.96H.33V79.204h54.658v54.664z"/>
+                <g fill="#8FC045">
+                    <path d="M79.09 28.833c2.891 0 4.615-.37 5.688-1.256 1.025-.842 1.631-2.426 1.631-4.197 0-1.772-.606-3.216-1.68-4.054-1.26-.977-2.752-1.308-6.059-1.308h-4.707v10.815h5.126zm-.703-14.358c3.263 0 4.615-.327 5.732-1.444.886-.79 1.304-1.955 1.304-3.403 0-1.632-.51-2.937-1.444-3.683-1.025-.79-2.42-1.117-5.082-1.117h-4.943v9.651h4.433v-.004zm-15.801 14.31h1.819c2.748 0 3.027-.279 3.027-2.844V7.664c0-2.609-.279-2.888-3.027-2.888h-1.82V1.233h17.856c7.74 0 11.513 2.518 11.513 7.644 0 3.822-1.631 5.641-6.247 6.994 2.657.65 3.778 1.165 4.986 2.19 1.632 1.353 2.474 3.36 2.474 5.873 0 2.657-.934 4.803-2.657 6.156-2.146 1.632-5.034 2.238-10.954 2.238h-16.97v-3.543zM112.418 18.578c-.51-4.289-1.631-5.829-4.288-5.829-2.748 0-4.24 1.724-4.986 5.83h9.274zm5.968 5.969c-.606 3.403-1.444 4.987-3.45 6.527-1.863 1.396-4.197 2.098-6.994 2.098-6.805 0-11.33-4.707-11.33-11.701 0-7.038 4.616-11.798 11.514-11.798 3.498 0 6.107 1.074 7.878 3.264 1.724 2.098 2.33 4.24 2.518 8.905h-15.57c.187 2.936.558 4.197 1.444 5.501 1.025 1.445 2.377 2.099 4.38 2.099 1.583 0 2.984-.419 3.87-1.165.837-.746 1.304-1.632 1.862-3.73h3.878zM130.644 26.457c0 2.286.467 2.753 2.657 2.753h1.444v3.12h-13.847v-3.124h1.4c2.238 0 2.7-.467 2.7-2.754V7.102c0-2.286-.466-2.748-2.7-2.748h-1.4V1.23h9.741v25.227h.005zM147.1 4.313c0 1.911-1.54 3.452-3.403 3.452-1.958 0-3.498-1.54-3.498-3.543 0-1.82 1.583-3.355 3.45-3.355a3.435 3.435 0 0 1 3.451 3.446zM136.892 29.21h1.68c2.19 0 2.656-.51 2.656-2.753V16.338c0-2.238-.467-2.753-2.657-2.753h-1.68V10.46h9.978v15.99c0 2.238.467 2.753 2.657 2.753h1.4v3.124h-14.03c-.004.004-.004-3.12-.004-3.12zM169.148 18.578c-.514-4.289-1.631-5.829-4.288-5.829-2.753 0-4.24 1.724-4.986 5.83h9.274zm5.968 5.969c-.606 3.403-1.444 4.987-3.446 6.527-1.867 1.396-4.197 2.098-6.993 2.098-6.806 0-11.33-4.707-11.33-11.701 0-7.038 4.616-11.798 11.513-11.798 3.499 0 6.107 1.074 7.879 3.264 1.723 2.098 2.33 4.24 2.517 8.905h-15.57c.188 2.936.558 4.197 1.444 5.501 1.025 1.445 2.378 2.099 4.38 2.099 1.584 0 2.984-.419 3.87-1.165.842-.746 1.304-1.632 1.862-3.73h3.874zM180.338 15.92c-.558-1.68-1.304-2.33-2.517-2.33h-1.304v-3.123h12.027v3.123h-.746c-1.304 0-1.819.328-1.819 1.165 0 .467.14 1.213.419 1.96l3.45 10.117 3.73-10.537a4.44 4.44 0 0 0 .28-1.54c0-.794-.65-1.165-2.05-1.165h-1.117v-3.123h10.766v3.123h-1.169c-1.208 0-2.094.886-2.796 2.797l-5.593 15.942h-5.92l-5.64-16.409zM218.378 18.578c-.51-4.289-1.632-5.829-4.289-5.829-2.752 0-4.244 1.724-4.986 5.83h9.275zm5.963 5.969c-.606 3.403-1.444 4.987-3.446 6.527-1.863 1.396-4.197 2.098-6.993 2.098-6.806 0-11.33-4.707-11.33-11.701 0-7.038 4.616-11.798 11.517-11.798 3.495 0 6.104 1.074 7.875 3.264 1.723 2.098 2.33 4.24 2.517 8.905h-15.57c.188 2.936.558 4.197 1.448 5.501 1.026 1.445 2.378 2.099 4.38 2.099 1.584 0 2.984-.419 3.87-1.165.838-.746 1.309-1.632 1.863-3.73h3.87zM248.954 4.313c0 1.911-1.536 3.452-3.403 3.452-1.954 0-3.494-1.54-3.494-3.543 0-1.82 1.583-3.355 3.45-3.355a3.432 3.432 0 0 1 3.447 3.446zM238.746 29.21h1.68c2.19 0 2.656-.51 2.656-2.753V16.338c0-2.238-.467-2.753-2.657-2.753h-1.68V10.46h9.978v15.99c0 2.238.466 2.753 2.656 2.753h1.4v3.124h-14.03c-.003.004-.003-3.12-.003-3.12zM254.968 29.209h1.492c2.19 0 2.657-.467 2.657-2.753V16.338c0-2.286-.467-2.753-2.657-2.753h-1.492V10.46h9.742v3.822c2.892-3.403 4.894-4.52 7.878-4.52 2.007 0 4.057.746 5.222 1.91 1.165 1.166 1.584 2.845 1.584 6.153v8.63c0 2.286.467 2.753 2.657 2.753h1.304v3.123h-13.149V29.21h.934c2.19 0 2.657-.467 2.657-2.753V17.83c0-1.911-.14-2.561-.655-3.264-.606-.746-1.631-1.213-2.796-1.213-1.632 0-3.215.838-4.288 2.287-1.03 1.352-1.353 2.56-1.353 5.174v5.642c0 2.286.467 2.753 2.657 2.753h.934v3.123h-13.332V29.21h.004zM83.84 64.823c-.326 3.634-.933 5.362-2.377 7.037-1.631 1.863-4.149 2.845-7.412 2.845-6.805 0-11.233-4.568-11.233-11.61s4.894-11.841 12.075-11.841c5.314 0 9.135 2.845 9.135 6.714 0 2.378-1.492 3.962-3.634 3.962-1.958 0-3.354-1.256-3.354-3.076 0-1.636.837-2.565 2.656-2.892-1.77-1.305-2.704-1.68-4.336-1.68-4.01 0-6.247 3.076-6.247 8.625 0 5.035 1.959 7.6 5.732 7.6 3.263 0 4.712-1.54 5.41-5.689h3.586v.005zM85.798 42.815h9.462v13.054c2.892-3.36 4.895-4.52 7.83-4.52 2.003 0 4.058.746 5.223 1.91 1.165 1.166 1.583 2.846 1.583 6.153v8.625c0 2.287.467 2.753 2.657 2.753h1.309v3.124h-13.1V70.79h.933c2.146 0 2.609-.466 2.609-2.753v-8.625c0-1.911-.14-2.561-.65-3.264-.559-.746-1.584-1.213-2.753-1.213-1.632 0-3.215.838-4.289 2.287-1.025 1.304-1.352 2.657-1.352 5.362v5.453c0 2.287.467 2.753 2.657 2.753h.933v3.124H85.798V70.79h1.213c2.19 0 2.656-.466 2.656-2.753v-19.35c0-2.286-.466-2.748-2.656-2.748h-1.213v-3.124zM126.076 45.895c0 1.91-1.54 3.45-3.403 3.45-1.958 0-3.498-1.54-3.498-3.542 0-1.82 1.583-3.355 3.45-3.355a3.435 3.435 0 0 1 3.451 3.447zM115.868 70.79h1.68c2.19 0 2.656-.51 2.656-2.753V57.924c0-2.239-.467-2.753-2.657-2.753h-1.68v-3.124h9.978v15.99c0 2.238.467 2.753 2.657 2.753h1.4v3.124h-14.03c-.004 0-.004-3.124-.004-3.124zM141.599 68.038c0 2.286.467 2.753 2.657 2.753h1.444v3.12h-13.847v-3.124h1.4c2.238 0 2.705-.467 2.705-2.753v-19.35c0-2.286-.467-2.749-2.705-2.749h-1.4v-3.124h9.742v25.227h.004zM154.65 62.908c0 5.266 1.723 7.928 5.082 7.928 3.499 0 5.453-2.797 5.453-7.788s-1.958-7.784-5.453-7.784c-3.31 0-5.082 2.657-5.082 7.644zm5.92-20.091h10.213v25.222c0 2.286.466 2.753 2.656 2.753h1.305v3.124h-9.554v-3.822c-1.911 3.36-3.778 4.477-7.32 4.477-6.06 0-9.555-4.241-9.555-11.654s3.5-11.658 9.51-11.658c3.591 0 5.454 1.121 7.37 4.429v-6.994c0-2.287-.468-2.753-2.658-2.753h-1.958c-.01 0-.01-3.124-.01-3.124zM191.526 73.913h-14.732v-3.124h1.492c2.19 0 2.657-.515 2.657-2.753V57.918c0-2.286-.467-2.753-2.657-2.753h-1.492V52.04h9.742v3.263c1.77-2.796 3.402-3.87 5.92-3.87 3.167 0 5.496 2.1 5.496 4.987 0 2.287-1.54 3.918-3.73 3.918-1.91 0-3.171-1.121-3.171-2.844 0-1.584.794-2.47 2.796-3.124-.842-.28-1.583-.467-2.05-.467-1.309 0-2.893 1.025-3.826 2.517-.934 1.4-1.444 3.5-1.444 5.69v5.92c0 2.238.467 2.753 2.657 2.753h2.33v3.129h.012zM215.58 60.16c-.511-4.29-1.632-5.83-4.29-5.83-2.752 0-4.24 1.724-4.986 5.83h9.275zm5.967 5.968c-.606 3.403-1.444 4.987-3.45 6.527-1.863 1.4-4.197 2.099-6.994 2.099-6.805 0-11.33-4.708-11.33-11.702 0-7.037 4.616-11.793 11.513-11.793 3.5 0 6.108 1.073 7.88 3.264 1.722 2.098 2.329 4.245 2.516 8.904h-15.57c.188 2.937.559 4.198 1.444 5.502 1.026 1.444 2.378 2.099 4.38 2.099 1.584 0 2.984-.42 3.87-1.165.838-.746 1.304-1.632 1.863-3.73.004-.005 3.878-.005 3.878-.005zM224.295 70.787h1.492c2.19 0 2.657-.466 2.657-2.753V57.917c0-2.287-.467-2.753-2.657-2.753h-1.492V52.04h9.742v3.826c2.892-3.403 4.894-4.524 7.878-4.524 2.003 0 4.053.746 5.218 1.91 1.165 1.165 1.584 2.845 1.584 6.157v8.625c0 2.287.466 2.753 2.656 2.753h1.305v3.124h-13.145v-3.124h.934c2.19 0 2.657-.466 2.657-2.753V59.41c0-1.911-.14-2.566-.655-3.264-.606-.746-1.631-1.213-2.796-1.213-1.632 0-3.215.842-4.288 2.286-1.03 1.353-1.353 2.566-1.353 5.175v5.641c0 2.287.467 2.753 2.657 2.753h.934v3.124H224.29v-3.124h.004z"/>
+                </g>
+                <title>Believe in children Barnardo's</title>
+            </g>
+        </svg>
+    </a>
+</div>
+  </div>
+      
+<nav aria-label="Main navigation menu">
+    <div class="header-extras">
+    <div class="header-links js-header-links" id="header-links">
+              <a class="prominent-link prominent-link--tight prominent-link--green" href="https://donate.barnardos.org.uk">
+          <span>Donate</span>
+        </a>
+                    <a class="prominent-link prominent-link--tight prominent-link--black" href="//www.barnardos.org.uk/shops">
+          <span>Shop</span>
+        </a>
+                      </div>
+          <div class="main-search js-main-search" id="main-search">
+        <form action="/merged-search" method="get">
+          
+          <div class="search-form">
+    <div class="search-form__query-container">
+                    <label class="search-form__label-layout"><span class="search-form__label">Search: site search</span>
+        <input class="search-form__input search-form__input--wrapper-text" type="text" name="q" placeholder="Search entire site" value="">
+        </label>
+                  <input class="search-form__submit" type="submit" value="Search">
+    </div>
+          <input type="hidden" name="ct" value="">
+            </div>
+
+        </form>
+      </div>
+      </div>
+  <div class="main-menu js-main-menu">
+    
+    <style>.main-menu__menu {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 0 1rem;
+  padding: 0;
+  }.main-menu__sub-menu {
+  display: none;
+  max-height: calc(100vh - 11.25rem);
+  min-width: 18rem;
+  overflow: auto;
+  padding: 0.6rem 0;
+  position: absolute;
+}</style>
+              <ul class="main-menu__menu">
+      
+                          </li>
+                                            <li class="main-menu__item">
+                                          <a href="https://www.barnardos.org.uk/what-we-do" class="main-menu__link" data-drupal-link-system-path="node/156">How we change lives</a>
+                                                            <ul class="main-menu__sub-menu">
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/who-we-are/measuring-our-impact" title="The effect our services have on children, young people, families" class="main-menu__sub-link" data-drupal-link-system-path="node/31686">Our impact</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/who-we-are/how-were-funded" title="Where our money comes from and how we use it." class="main-menu__sub-link" data-drupal-link-system-path="node/81">How we’re funded</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/who-we-are/our-strategy" title="At Barnardo’s our goal is clear – to achieve better outcomes for more children." class="main-menu__sub-link">Our Strategy</a>
+                                        </li>
+                  </ul>
+      
+                          </li>
+                                            <li class="main-menu__item">
+                                          <a href="https://www.barnardos.org.uk/what-we-do" class="main-menu__link" data-drupal-link-system-path="node/156">Get support</a>
+                                                            <ul class="main-menu__sub-menu">
+                                        <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/what-we-do/fostering-and-adoption" class="main-menu__sub-link" data-drupal-link-system-path="node/221">Fostering and adoption</a>
+                                        </li>
+                                        <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/what-we-do/services" class="main-menu__sub-link" data-drupal-link-system-path="node/221">Barnardo's services</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/what-we-do/helping-families" class="main-menu__sub-link" data-drupal-link-system-path="node/336">Helping children and families</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/what-we-do/supporting-young-people" class="main-menu__sub-link" data-drupal-link-system-path="node/336">Supporting young people</a>
+                                        </li>
+                  </ul>
+      
+                          </li>
+                                            <li class="main-menu__item">
+                                          <a href="https://www.barnardos.org.uk/get-involved" class="main-menu__link" data-drupal-link-system-path="node/1636">Get involved</a>
+                                                            <ul class="main-menu__sub-menu">
+                                        <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/get-involved/change-life" title="Make a donation to support our work" class="main-menu__sub-link" data-drupal-link-system-path="node/1">Donate now</a>
+                                        </li>
+                                        <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/shops" title="Make a donation to support our work" class="main-menu__sub-link" data-drupal-link-system-path="node/1">Search for a shop near you</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/donate/other-ways-donate" title="Find out different ways to donate" class="main-menu__sub-link" data-drupal-link-system-path="node/371">Donate in other ways</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/get-involved/raise-money" class="main-menu__sub-link" data-drupal-link-system-path="node/571">Raise money for us</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="/get-involved/challenge-events" title="Challenge yourself" class="main-menu__sub-link" data-drupal-link-system-path="node/1641">Challenge yourself</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="/get-involved/volunteer" class="main-menu__sub-link" data-drupal-link-system-path="node/1666">Volunteer with us</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="/get-involved/campaign-with-us" class="main-menu__sub-link" data-drupal-link-system-path="node/25931">Campaign with us</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="/get-involved/shop-and-donate" class="main-menu__sub-link" data-drupal-link-system-path="node/30611">Donate while you shop</a>
+                                        </li>
+                  </ul>
+      
+                          </li>
+                                            <li class="main-menu__item">
+                                          <a href="https://www.barnardos.org.uk/what-we-do/services/" class="main-menu__link" data-drupal-link-system-path="node/11976">Find help in your area</a>
+                                        </li>
+                                        <li class="main-menu__item" style="margin-left:auto">
+                                          <a href="/work-with-us" class="main-menu__link" data-drupal-link-system-path="node/11976" style="font-weight:normal">Work with us</a>
+                                                            <ul class="main-menu__sub-menu">
+                                        <li class="main-menu__sub-item">
+                                            <a href="/jobs-at-barnardos" class="main-menu__sub-link" data-drupal-link-system-path="node/11981">Jobs</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="/commission-us" class="main-menu__sub-link" data-drupal-link-system-path="node/486">Commission us</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="/work-with-us/corporate-partnerships" class="main-menu__sub-link" data-drupal-link-system-path="node/29506">Corporate partnerships</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/get-involved/philanthropy" class="main-menu__sub-link">Philanthropy</a>
+                                        </li>
+                                  <li class="main-menu__sub-item">
+                                            <a href="https://www.barnardos.org.uk/what-we-do/voice-influence-young-people" title="Involving children and young people in decisions that affect their lives" class="main-menu__sub-link" data-drupal-link-system-path="node/25936">Voice and influence of young people</a>
+                                        </li>
+                  </ul>
+
+                          </li>
+
+                                        <li class="main-menu__item">
+                                          <a href="https://www.barnardos.org.uk/news" class="main-menu__link" data-drupal-link-system-path="node/11976" style="font-weight:normal">News</a>
+                                        </li>
+                                        </li>
+                                            <li class="main-menu__item">
+                                          <a href="https://www.barnardos.org.uk/blog" class="main-menu__link" data-drupal-link-system-path="node/11976" style="font-weight:normal">Blog</a>
+                                        </li>
+                  </ul>
+      
+
+
+  </div>
+</nav>
+    <div class="beta-banner">
+    <p class="beta-banner__inner"><a class="beta-banner__link" href="/what-do-you-think">We're still working on this site - <b>can you help us to improve it?</b></a></p>
+  </div>
+</div>
+
+<div class="home-hero-image__bc">
+  
+</div>
+<div class="home-hero-image home-hero-image--focus-center --alt-color">
+  <div class="home-hero-image__banner">
+    <div class="home-hero-image__background">
+      <div class="home-hero-image__image">
+        <img srcset="https://www.barnardos.org.uk/sites/default/files/styles/b_xs/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=8XjpIvj0 500w, https://www.barnardos.org.uk/sites/default/files/styles/b_sm/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=wwd6l8lZ 768w, https://www.barnardos.org.uk/sites/default/files/styles/b_md/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=A72sGDJn 1024w, https://www.barnardos.org.uk/sites/default/files/styles/b_lg/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=ZyAufLqW 1440w" sizes="100vw" src="/sites/default/files/styles/b_lg/public/uploads/Hero%20image%20option%20_1%20-%20boy.jpg?itok=ZyAufLqW" alt="A young boy sitting on a wall playing with his phone" typeof="foaf:Image" />
+
+      </div>
+    </div>
+    <div class="home-hero-image__content">
+      <div class="home-hero-image__row">
+                  <div class="home-hero-image__title"><h1 class="title">Help a child feel safe and protected from harm this summer</h1></div>
+                                <div class="home-hero-image__cta">
+          <a href="https://www.barnardos.org.uk/safe-summer" id="banner-cta">Donate now</a>
+        </div>
+              </div>
+    </div>
+  </div>
+  <div class="home-hero-image__small-screen-section">
+          <div class="home-hero-image__title"><h1 class="title">Help a child feel safe and protected from harm this summer</h1></div>
+                <div class="home-hero-image__barred">
+                        <div class="home-hero-image__cta">
+        <a href="https://www.barnardos.org.uk/safe-summer" id="banner-cta">Donate now</a>
+      </div>
+          
+    </div>
+      </div>
+</div>
+      
+  </div>
+
+  </div>
+
+  </header>
+
+  <div class="layout">
+    <main class="layout__content" id="main-content">
+        <div>
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+      
+
+        <div>
+    <div id="block-barnardos-theme-content">
+  
+    
+      <article role="article" about="/index" typeof="schema:WebPage">
+
+  
+      <span property="schema:name" content="Help a child feel safe and protected from harm this summer" class="hidden"></span>
+
+
+  
+  <div>
+    
+            <div property="schema:text"><div class="image-text-block">
+    <div class="image-text-block__wrap">
+    <div class="image-text-block__item image-text-block__item--columns-40-60 image-text-block__item--left">
+        
+<div class="feature-image">
+  <div class="feature-image__inner">
+    <div class="feature-image__media">
+      <div class="feature-image__media-double-wrap">
+        <div class="feature-image__media-wrap">
+          <img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/ukraine%20mum%20and%20child.jpg?itok=tot7iRhw&amp;w=1440" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/ukraine%20mum%20and%20child.jpg?itok=JkChDnnX&amp;w=425 425w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/ukraine%20mum%20and%20child.jpg?itok=xG30pyN0&amp;w=768 768w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/ukraine%20mum%20and%20child.jpg?itok=TRu1xI3P&amp;w=1024 1024w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/ukraine%20mum%20and%20child.jpg?itok=tot7iRhw&amp;w=1440 1440w" sizes="(min-width: 87.5rem) 32rem, (min-width: 768px) 35vw, 93vw" alt="Mother and child from Ukraine" title="" typeof="foaf:Image" /></div>
+      </div>
+    </div>
+                  </div>
+</div>
+
+
+    </div>
+    <div class="image-text-block__item image-text-block__item--columns-40-60">
+            <div class="image-text-block__subheading">
+        <h4 class="sub-heading">Barnardo’s Ukrainian support helpline  </h4>
+      </div>
+            <div class="image-text-block__copy">
+        <div class="rich-text">
+  
+<p><span><span><span>If you’re fleeing the war in Ukraine and arriving in the UK, call our helpline for advice, therapy and practical support.</span></span></span></p>
+
+<p><a href="https://www.barnardos.org.uk/what-we-do/helping-families/ukrainian-helpline" title="See Hear Respond">Get support</a></p>
+
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="image-text-block">
+    <div class="image-text-block__wrap">
+    <div class="image-text-block__item image-text-block__item--columns-40-60 image-text-block__item--left">
+        
+<div class="feature-image">
+  <div class="feature-image__inner">
+    <div class="feature-image__media">
+      <div class="feature-image__media-double-wrap">
+        <div class="feature-image__media-wrap">
+          <img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-02/toddle%20birthday%20banner.jpg?itok=skkT4Pq1&amp;w=1440" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-02/toddle%20birthday%20banner.jpg?itok=PeBGeC2M&amp;w=425 425w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-02/toddle%20birthday%20banner.jpg?itok=3DvXKikC&amp;w=768 768w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-02/toddle%20birthday%20banner.jpg?itok=qJSKLlPm&amp;w=1024 1024w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-02/toddle%20birthday%20banner.jpg?itok=skkT4Pq1&amp;w=1440 1440w" sizes="(min-width: 87.5rem) 32rem, (min-width: 768px) 35vw, 93vw" alt="Children celebrate Big Toddle's 25th birthday" title="" typeof="foaf:Image" /></div>
+      </div>
+    </div>
+                  </div>
+</div>
+
+
+    </div>
+    <div class="image-text-block__item image-text-block__item--columns-40-60">
+            <div class="image-text-block__subheading">
+        <h4 class="sub-heading">Big Toddle - 20th to 26th June</h4>
+      </div>
+            <div class="image-text-block__copy">
+        <div class="rich-text">
+  
+<p>This week over 38,000 toddlers put their best foot forward with our annual sponsored walk.</p>
+
+<p><a href="https://www.barnardos.org.uk/bigtoddle">Find out more</a></p>
+
+<p class="x"></p>
+
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="image-text-block">
+    <div class="image-text-block__wrap">
+    <div class="image-text-block__item image-text-block__item--columns-40-60 image-text-block__item--left">
+        
+<div class="video-block  js-video-block-youtube">
+  <div class="video-block__inner">
+    <div class="video-block__title-wrap">
+      <div class="video-block__media">
+        <div class="video-block__media-double-wrap video-block__media-double-wrap-vimeo">
+                      <div class="video-block__video js-youtube" aria-hidden="true" id="220570372"><div data-youtube="lHV5xqehXZ0"></div></div>
+                              <div class="video-block__media-wrap">
+                          <img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-04/our%20impact%20video%20image.jpg?itok=u9iLAi7n&amp;w=1440" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-04/our%20impact%20video%20image.jpg?itok=pkzWBc1X&amp;w=425 425w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-04/our%20impact%20video%20image.jpg?itok=PB8Me6bU&amp;w=768 768w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-04/our%20impact%20video%20image.jpg?itok=SDQfCaoY&amp;w=1024 1024w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-04/our%20impact%20video%20image.jpg?itok=u9iLAi7n&amp;w=1440 1440w" sizes="100vw" alt="Young person looks directly into camera" title="" typeof="foaf:Image" /><div class="video-block__media-content">
+              </div>
+                      </div>
+        </div>
+        </div>
+      <div class="video-block__media-content--row">
+        <div class="video-block__media-content--image" tabindex="0" role="button" aria-label="Play media" aria-controls="(&quot;220570372&quot;" or="" title="Play media">
+          <svg viewbox="0 0 100 100"><title>Play or pause video</title><rect width="100" height="100"></rect><polygon points="37,30 37,70 70.5,50"></polygon></svg></div>
+              </div>
+    </div>
+              </div>
+</div>
+
+
+    </div>
+    <div class="image-text-block__item image-text-block__item--columns-40-60">
+            <div class="image-text-block__subheading">
+        <h4 class="sub-heading">Our Impact</h4>
+      </div>
+            <div class="image-text-block__copy">
+        <div class="rich-text">
+  
+<p class="x"><span><span><span>We protect, support and nurture the UK's most vulnerable children. For every £1 we spend, approximately 92p goes on working with the children and young people who most need our help.</span></span></span></p>
+
+<p><a href="https://www.barnardos.org.uk/who-we-are/measuring-our-impact"><span><span>Read about our impact </span></span></a>​​​​​​</p>
+
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="callout-block callout-block--three">
+    <header class="callout-block__title"><h2 class="heading">What we do</h2>
+  </header><ul class="callout-block__cards"><li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/fostering-fortnight-2.jpg?itok=lL49OWLQ&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/fostering-fortnight-2.jpg?itok=IBGJEOM3&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/fostering-fortnight-2.jpg?itok=8yRsmsbF&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/fostering-fortnight-2.jpg?itok=lL49OWLQ&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="foster carer and child sit on the sofa" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Helping you foster a child</h3>
+        <p class="callout-block__card-body">Fostering is a really important role that can get a child through a difficult time. Your love and support can make a huge difference to their life – and to yours. And you won't be alone: we will give you all the specialist support you need.<br />
+ </p>
+    <div class="callout-block__card-button">
+<div><a href="/foster" title="Barnardo's Fostering">Find out more</a></div>
+</div>
+  </div>
+</li>
+
+
+<li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/barnardos-what-we-do-protecting-children_0.jpg?itok=2ifkmVAx&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/barnardos-what-we-do-protecting-children_0.jpg?itok=CgHQQQHW&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/barnardos-what-we-do-protecting-children_0.jpg?itok=nvmXhv3r&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/barnardos-what-we-do-protecting-children_0.jpg?itok=2ifkmVAx&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Young boy in front of a brick wall" title="" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Protecting children</h3>
+        <p class="callout-block__card-body">We support children who have been abused and help them feel safe again. We provide the long-term support they need and help prevent further cases of abuse. </p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/what-we-do/protecting-children">Find out more</a></div>
+</div>
+  </div>
+</li>
+
+
+<li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-what-we-do-supporting-young-adults_1.jpg?itok=LCeOzVD0&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-what-we-do-supporting-young-adults_1.jpg?itok=xuNxC_nC&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-what-we-do-supporting-young-adults_1.jpg?itok=LsfIVNHB&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-what-we-do-supporting-young-adults_1.jpg?itok=LCeOzVD0&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Young person in kitchen with support worker in background" title="" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Supporting young people</h3>
+        <p class="callout-block__card-body">We offer practical and emotional support to young people so they can enter adulthood with the confidence they need to achieve their full potential.</p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/what-we-do/supporting-young-people">Find out more</a></div>
+</div>
+  </div>
+</li>
+
+
+  </ul><p class="callout-block__show-more"><a href="https://www.barnardos.org.uk/what-we-do">View more of what we do</a></p>
+  </div>
+
+
+<form action="/what-we-do/services" method="get">
+    <div class="location-search-box location-search-box--image" data-gkey="">
+  <div class="location-search-box--wrap">
+    <div class="location-search-box__image location-search-box__image--service">
+          <input type="hidden" name="lat" value="" /><input type="hidden" name="lng" value="" /><div class="search-box">
+  <div class="search-box__inner">
+        <div class="search-box__title">
+      <h2 class="heading">Find a service</h2>
+    </div>
+        <div class="search-box__wrap">
+      
+          <div class="search-form">
+    <div class="search-form__query-container">
+                    <label class="search-form__label-layout"><span class="search-form__label">Search: service</span>
+        <input class="search-form__input search-form__input--wrapper-text" type="text" name="q" placeholder="Location or postcode" value="" /></label>
+                  <input class="search-form__submit" type="submit" value="Search" /></div>
+          <input type="hidden" name="ct" value="service" /></div>
+
+    </div>
+  </div>
+</div>
+    </div>
+      </div>
+</div>
+</form>
+
+
+<div class="donate-block js-donate-block " data-donate-block-id="donate-block-id-monthly-25-8">
+    <form class="js-form donate-block__form" action="https://donate.barnardos.org.uk/donations/new">
+    <input type="hidden" name="ref" value="" /><div class="donate-block__contain">
+      <div class="donate-block__contain-row">
+                <header class="donate-block__title"><h2 class="heading">Make a donation</h2>
+        </header><fieldset><legend>Payment options</legend>
+          <div class="donate-block__period js-donate-block__period">
+
+            <label class="donate-block__period--first-label">
+              <input class="donate-block__period--input" type="radio" name="don_ops" value="monthly" checked="checked" data-b-campain-code="" /><span>Monthly donation</span>
+            </label>
+
+            <span class="donate-block__period--divider">or</span>
+
+            <label class="donate-block__period--last-label">
+              <input class="donate-block__period--input" type="radio" name="don_ops" value="today" data-b-campain-code="" /><span>Single donation</span>
+            </label>
+
+          </div>
+        </fieldset><input type="hidden" name="don_amount" value="8" /><div class="donate-block__choice js-donate-block__choice" data-payment-option="monthly">
+                    <fieldset class="donate-block__amounts donate-block__amounts--monthly"><legend>Monthly amounts monthly</legend>
+            <div class="donate-block__choice-wrap">
+                                    <label class="donate-block__choice-item">
+                <input type="radio" name="don_amount_monthly" value="5" data-monthly-amount="5" data-monthly-nudge-text="£5 could give a young person leaving care three one-to-one sessions with a personal advisor" data-donation-type="monthly" /><span>£5</span>
+              </label>
+                                                <label class="donate-block__choice-item">
+                <input type="radio" name="don_amount_monthly" value="8" checked="checked" data-monthly-amount="8" data-monthly-nudge-text="£8 could provide monthly personal hygiene products for a young person leaving care" data-donation-type="monthly" /><span>£8</span>
+              </label>
+                                                <label class="donate-block__choice-item">
+                <input type="radio" name="don_amount_monthly" value="10" data-monthly-amount="10" data-monthly-nudge-text="£10 could provide specialist play equipment for children living with disabilities" data-donation-type="monthly" /><span>£10</span>
+              </label>
+                                                <label class="donate-block__choice-item">
+                <input type="radio" name="don_amount_monthly" value="15" data-monthly-amount="15" data-monthly-nudge-text="£15 could pay for group activities for 18 young carers to help build their confidence" data-donation-type="monthly" /><span>£15</span>
+              </label>
+                                  </div>
+          </fieldset><fieldset class="donate-block__amounts donate-block__amounts--single"><legend>Single payment amounts</legend>
+            <div class="donate-block__choice-wrap" data-payment-option="monthly">
+                                  <label class="donate-block__choice-item">
+              <input type="radio" name="don_amount_today" value="10" data-today-amount="10" data-nudge-text="£10 could give a young carer a day out, and a break from their caring responsibilities" data-donation-type="today" /><span>£10</span>
+            </label>
+                                              <label class="donate-block__choice-item">
+              <input type="radio" name="don_amount_today" value="25" checked="checked" data-today-amount="25" data-nudge-text="£25 could provide a young person with bedding and a safe place to sleep" data-donation-type="today" /><span>£25</span>
+            </label>
+                                              <label class="donate-block__choice-item">
+              <input type="radio" name="don_amount_today" value="50" data-today-amount="50" data-nudge-text="£50 could provide specialist support to help a child recover from the trauma of sexual abuse" data-donation-type="today" /><span>£50</span>
+            </label>
+                                              <label class="donate-block__choice-item">
+              <input type="radio" name="don_amount_today" value="100" data-today-amount="100" data-nudge-text="£100 could provide four mentoring sessions to a young person leaving care" data-donation-type="today" /><span>£100</span>
+            </label>
+                                  </div>
+          </fieldset><label class="donate-block__currency-input">
+            <p class="donate-block__currency-input-prefix">£</p>
+            <input class="donate-block__currency-input-field" type="number" name="don_amount" value="" placeholder="Any" min="1.00" step="0.01" data-nudge-text="" data-monthly-nudge-text="" /></label>
+        </div>
+        <div class="donate-block__green-wrapper">
+          <div class="donate-block__text js-donate-block__text">
+            <p></p>
+          </div>
+          <div class="donate-block__submit js-donate-block__submit">
+            <button>Donate <span></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<div class="callout-block callout-block--three">
+    <header class="callout-block__title"><h2 class="heading">Get involved</h2>
+  </header><ul class="callout-block__cards"><li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/children%20look%20at%20their%20phones%20on%20the%20bus.jpg?itok=xUgpkCJM&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/children%20look%20at%20their%20phones%20on%20the%20bus.jpg?itok=xYVZH-lZ&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/children%20look%20at%20their%20phones%20on%20the%20bus.jpg?itok=Hu7diiae&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/children%20look%20at%20their%20phones%20on%20the%20bus.jpg?itok=xUgpkCJM&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Children look at their phones on the bus " title="" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Sign our letter to prevent children from accessing violent pornography</h3>
+        <p class="callout-block__card-body">Ask pornography sites to do more to protect children</p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/online-safety/keep-children-safe-online">Sign now</a></div>
+</div>
+  </div>
+</li>
+
+
+<li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/london-marathon3.jpg?itok=7m5jDCvj&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/london-marathon3.jpg?itok=w9sCZBNi&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/london-marathon3.jpg?itok=NezByd8F&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/london-marathon3.jpg?itok=7m5jDCvj&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Runner hugging supporter at London Marathon" title="" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Challenge yourself</h3>
+        <p class="callout-block__card-body">Take on a challenge event and raise money to help vulnerable children across the UK. </p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/get-involved/challenge-events">Take on a challenge</a></div>
+</div>
+  </div>
+</li>
+
+
+<li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2018-07/19829_Website%20banner_Donate%5B2%5D_0.jpg?itok=pDlfxTWQ&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2018-07/19829_Website%20banner_Donate%5B2%5D_0.jpg?itok=LKw34jmK&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2018-07/19829_Website%20banner_Donate%5B2%5D_0.jpg?itok=UkRYAohd&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2018-07/19829_Website%20banner_Donate%5B2%5D_0.jpg?itok=pDlfxTWQ&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Women with Barnardo's collection buckets" title="" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Raise money for us</h3>
+        <p class="callout-block__card-body">Join a community of like-minded people having fun and raising money to improve young lives. </p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/get-involved/raise-money">Raise money</a></div>
+</div>
+  </div>
+</li>
+
+
+  </ul></div>
+
+
+<div class="callout-block callout-block--three">
+    <ul class="callout-block__cards"><li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-our-shops1.jpg?itok=4y3jJDLB&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-our-shops1.jpg?itok=QwK8yea8&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-our-shops1.jpg?itok=LP3U-RLN&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/Barnardos-our-shops1.jpg?itok=4y3jJDLB&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Shop volunteer holding up shirt while talking to customer" title="" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Shop with us</h3>
+        <p class="callout-block__card-body">Find your nearest shop to discover an amazing range of clothes and accessories, homeware, books, toys and games. </p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/shops" title="Our shops">Shop with us</a></div>
+</div>
+  </div>
+</li>
+
+
+<li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/21025_Seen%20and%20not%20heard%20podcast_1512x850px-3.jpg?itok=r2nKGDC4&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/21025_Seen%20and%20not%20heard%20podcast_1512x850px-3.jpg?itok=woWzMb-w&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/21025_Seen%20and%20not%20heard%20podcast_1512x850px-3.jpg?itok=gcyjrK_f&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/uploads/21025_Seen%20and%20not%20heard%20podcast_1512x850px-3.jpg?itok=r2nKGDC4&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Seen and Not Heard podcast by Barnardo's" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">Listen to our Podcast</h3>
+        <p class="callout-block__card-body">We look at what needs to change in the Care system, and how that change can be made. </p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/podcast">Listen now</a></div>
+</div>
+  </div>
+</li>
+
+
+<li class="callout-block__card-container">
+  <div class="callout-block__card">
+    <div class="callout-block__card-image"><img src="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/Lynn%20head%20shot.jpg?itok=f8O4zBB0&amp;w=680" srcset="https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/Lynn%20head%20shot.jpg?itok=7SFQ43Mg&amp;w=200 200w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/Lynn%20head%20shot.jpg?itok=OcVz9ou6&amp;w=370 370w, https://www.barnardos.org.uk/sites/default/files/styles/responsive/public/2022-03/Lynn%20head%20shot.jpg?itok=f8O4zBB0&amp;w=680 680w" sizes="(min-width: 768px) 33vw, 100vw" alt="Lynn Perry head shot" title="" typeof="foaf:Image" /></div>          <h3 class="sub-heading callout-block__card-title">A message for our supporters</h3>
+        <p class="callout-block__card-body">Announcing Lynn Perry as CEO</p>
+    <div class="callout-block__card-button">
+<div><a href="https://www.barnardos.org.uk/stakeholder-note" title="A message to stakeholders from Javed Khan">Read more</a></div>
+</div>
+  </div>
+</li>
+
+
+  </ul></div>
+
+</div>
+      
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+    </main>
+
+    <div class="layout__secondary">
+      
+          </div>
+
+  </div>
+
+  
+    <footer id="footer">
+    <div class="footer footer--no-reg">
+  <div class="footer__inner">
+           <div class="footer__social">
+    <div class="footer__social--flexContainer">
+      <h6 class="footer__social--text">Follow us on</h6>
+    </div>
+      <div class="footer__social--icons">
+        <a aria-label="Follow us on instagram" target="_blank" href="https://www.instagram.com/barnardos_uk/"><svg xmlns="http://www.w3.org/2000/svg" fill="#b3b3b3" viewBox="0 0 30 30"><g fill-rule="evenodd"><path d="m14.5 0-6 .1C7 .1 5.9.4 5 .8a7 7 0 0 0-2.6 1.6A7 7 0 0 0 .8 5C.4 6 .2 7 0 8.5a102.6 102.6 0 0 0 .7 15.4 7 7 0 0 0 1.6 2.6A7 7 0 0 0 5 28c1 .4 2 .6 3.5.7a101.6 101.6 0 0 0 15.4-.7 7 7 0 0 0 2.6-1.6 7 7 0 0 0 1.7-2.6c.3-1 .6-2 .6-3.5A102.6 102.6 0 0 0 28.2 5a7 7 0 0 0-1.7-2.6A7 7 0 0 0 23.9.8c-.9-.4-2-.6-3.5-.7h-6zm0 2.6h5.8a8 8 0 0 1 2.7.6 4.5 4.5 0 0 1 1.7 1c.5.6.8 1 1 1.7.2.5.5 1.3.5 2.7a99.7 99.7 0 0 1-.5 14.4 4.5 4.5 0 0 1-1 1.6 4.5 4.5 0 0 1-1.7 1.1 8 8 0 0 1-2.7.5 100 100 0 0 1-14.4-.5 4.5 4.5 0 0 1-1.6-1A4.5 4.5 0 0 1 3.2 23a8 8 0 0 1-.5-2.7 99.7 99.7 0 0 1 .5-14.4 4.5 4.5 0 0 1 1-1.6A4.5 4.5 0 0 1 6 3.2a8 8 0 0 1 2.7-.5h5.9z" mask="url(/themes/custom/deeson_frontend_framework/assets/%23b)" transform="translate(.2)"/><path d="M14.7 19.3a4.8 4.8 0 0 1-4.8-4.9 4.8 4.8 0 0 1 4.8-4.8 4.8 4.8 0 0 1 4.8 4.8 4.8 4.8 0 0 1-4.8 4.9zm0-12.3a7.4 7.4 0 1 0 0 14.9 7.4 7.4 0 0 0 0-14.9zm9.4-.3c0 1-.7 1.8-1.7 1.8a1.7 1.7 0 0 1-1.7-1.8 1.7 1.7 0 0 1 3.4 0"/></g></svg></a>
+        <a aria-label="Follow us on facebook." target="_blank" href="https://www.facebook.com/barnardos"><svg xmlns="http://www.w3.org/2000/svg" fill="#b3b3b3" viewBox="0 0 30 30"><g fill-rule="evenodd"><path d="M27.3 28.6c1 0 1.6-.7 1.6-1.6V1.6c0-.9-.7-1.6-1.6-1.6H1.6C.7 0 0 .7 0 1.6V27c0 .9.7 1.6 1.6 1.6h25.7z" mask="url(/themes/custom/deeson_frontend_framework/assets/%23b)" transform="translate(.5 .1)"/><path fill="#282828" d="M20.4 28.7v-11h3.8l.6-4.4h-4.4v-2.7c0-1.3.4-2.1 2.2-2.1H25V4.6l-3.3-.2c-3.4 0-5.7 2-5.7 5.7v3.2h-3.7v4.3H16v11.1h4.5z"/></g></svg></a>
+        <a aria-label="Follow us on twitter." target="_blank" href="https://twitter.com/barnardos"><svg xmlns="http://www.w3.org/2000/svg" fill="#b3b3b3" viewBox="0 0 30 30"><path d="M9 24A17 17 0 0 0 27 6a12 12 0 0 0 3-3 12 12 0 0 1-4 1 6 6 0 0 0 3-4l-4 2a6 6 0 0 0-4-2 6 6 0 0 0-6 7A17 17 0 0 1 2 1a6 6 0 0 0-1 3 6 6 0 0 0 3 5 6 6 0 0 1-3-1c0 3 2 6 5 6a6 6 0 0 1-3 0c1 3 3 5 6 5a12 12 0 0 1-8 2H0a17 17 0 0 0 9 3" mask="url(/themes/custom/deeson_frontend_framework/assets/%23b)" transform="translate(1 3)" fill-rule="evenodd"/></svg></a>
+        <a aria-label="Follow us on youtube." target="_blank" href="https://www.youtube.com/barnardos"><svg xmlns="http://www.w3.org/2000/svg" fill="#b3b3b3" viewBox="0 0 30 29"><g fill-rule="evenodd"><path d="M27.3 28.9c1 0 1.6-.7 1.6-1.6V1.6c0-.9-.7-1.6-1.6-1.6H1.6C.7 0 0 .7 0 1.6v25.7c0 .9.7 1.6 1.6 1.6h25.7z" mask="url(/themes/custom/deeson_frontend_framework/assets/%23b)" transform="translate(1)"/><path fill="#282828" d="M25.2 8.9A2.6 2.6 0 0 0 23.4 7c-1.6-.4-8-.4-8-.4s-6.4 0-8 .4a2.6 2.6 0 0 0-1.8 2c-.5 1.6-.5 5-.5 5s0 3.3.5 4.9c.2.9.9 1.6 1.8 1.8 1.6.5 8 .5 8 .5s6.4 0 8-.5a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-5 .4-5s0-3.3-.4-5"/><path d="M13.3 16.8v-6l5.4 3z"/></g></svg></a>
+      </div>
+  </div>
+    <div class="footer__menu">
+      <ul class="links"><li><a href="https://www.barnardos.org.uk/contact-us">Contact us</a></li><li><a href="https://www.barnardos.org.uk/terms-and-conditions">Terms &amp; conditions</a></li><li><a href="https://www.barnardos.org.uk/modern-slavery-and-human-trafficking-statement">Modern slavery statement</a></li><li><a href="https://www.barnardos.org.uk/privacy-notice">Privacy notice</a></li><li><a href="https://www.barnardos.org.uk/cookie-notice">Cookie notice</a></li><li><a href="https://www.barnardos.org.uk/accessibility">Accessibility statement</a></li><li><a href="https://www.barnardos.org.uk/website-attributions">Attributions</a></li></ul>
+    </div>
+    <div class="footer__info">
+      <p class="footer__registered">Registered office: Tanners Lane, Barkingside IG6 1QG. VAT number 507477337. Barnardo's is a charity (<a class="text-link text-link--black" href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/216250">216250</a> / <a class="text-link text-link--black" href="https://www.oscr.org.uk/search-charity-register/charity-extract/?charitynumber=SC037605">SC037605</a>) and a company limited by guarantee. (61625 England - <a class="text-link text-link--black" href="/governing-document-latest"> see the governing document</a>).</p>
+      <p class="footer__copyright">© Barnardo's 2022</p>
+    </div>
+  </div>
+</div>
+
+  </footer>
+  
+</div>
+  </div>
+
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ec7fc06072","applicationID":"98925803","transactionName":"NV1VZBEEVkZQBxcLXAwXdlMXDFdbHiARF0MDVGteDAFdaXILDRZBDVRbVRE5dlpVATULVhV7WF4XF1dZXQERTw0UUVJH","queueTime":0,"applicationTime":325,"atts":"GRpWElkeRUg=","errorBeacon":"bam.nr-data.net","agent":""}</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"72050753fdbe54be","token":"2c1e426b0d3a4e3784d68fbc066fb0e7","version":"2022.6.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
